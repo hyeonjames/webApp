@@ -6,13 +6,18 @@
 	<script type="text/javascript" src="./js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/angular.min.js"></script>
-	<script type="text/javascript" src="./js/date-utils.js"></script>
+	<script type="text/javascript" src="./js/date-utils.min.js"></script>
+	<script type="text/javascript" src="./core/common.js"></script>
 	<script type="text/javascript">
 		
 	</script>
 </head> 
-<body>
-	
-	
+<body ng-app="webApp">
+	<div class="container" web-menu title="홈페이지">
+		
+	</div>
+	<div class="container" ng-include="'./article.html'">
+		
+	</div>
 </body>
 </html>

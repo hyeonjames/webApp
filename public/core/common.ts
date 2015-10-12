@@ -8,19 +8,37 @@
 /* main */
 
 var webApp = angular.module('webApp',[]);
-var menuList = {
-	
-}
+var menuList = [
+	{
+		name : '메뉴1',
+		url : '#'
+	},
+	{
+		name : '메뉴2',
+		sub : [
+			{
+				name : '서브메뉴1',
+				url : '#sub'
+			},
+			'-',
+			{
+				name : '서브메뉴2',
+				url : '#sub2'
+			}
+		]
+	}
+]
 
 
 webApp.directive('webMenu', [()=>{
 	return {
 		restrict  :'A',
-		templateUrl : (scope,elem,attr) =>{
+		templateUrl : (elem,attr) =>{
 			return attr.viewPage || '/view/menu.html';
 		},
 		link : (scope,elem,attr) =>{
-			
+			scope.menus = menuList;
+			scope.title = attr.title || 'title'
 		}
 	}
 }]);
